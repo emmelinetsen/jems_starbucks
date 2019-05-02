@@ -6,7 +6,7 @@ Matt DiPietro
 Jonathan Gee
 <pre>
 
-To execute jar:
+## To execute jar:
 .jar file is in starbucks/out/artifacts/starbucks_jar
 
 In terminal, run: java -jar starbucks.jar
