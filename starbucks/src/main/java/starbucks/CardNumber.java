@@ -17,7 +17,7 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
     {
         if ( count > 9)
         {
-            System.err.println( "Card Number Touched at (" + x + ", " + y + ")" ) ;
+//            System.err.println( "Card Number Touched at (" + x + ", " + y + ")" ) ;
         }
         else
         {
@@ -63,8 +63,8 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
      */
     public void keyEventUpdate( int c, String key )
     {
-        System.err.println( "Card Number Key: " + cardNum + " key " + key +
-                " c " + c + " count " + count) ;
+//        System.err.println( "Card Number Key: " + cardNum + " key " + key +
+//                " c " + c + " count " + count) ;
 
 
         // setting count for the display() method switch statement

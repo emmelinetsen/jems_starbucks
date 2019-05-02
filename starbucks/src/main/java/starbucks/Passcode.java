@@ -18,7 +18,7 @@ public class Passcode implements ITouchEventHandler, IDisplayComponent, IKeyPadO
     {
         if ( y==2 )
         {
-            System.err.println( "Passcode Touched at (" + x + ", " + y + ")" ) ; 
+//            System.err.println( "Passcode Touched at (" + x + ", " + y + ")" ) ;
         }
         else
         {
@@ -48,7 +48,7 @@ public class Passcode implements ITouchEventHandler, IDisplayComponent, IKeyPadO
             value += "  Invalid Pin";
         }
 
-        System.err.println("Count "+ count);
+//        System.err.println("Count "+ count);
         switch ( count )
         {
             case 0: value += "\n\n [_][_][_][_]" ; break ;
@@ -58,7 +58,7 @@ public class Passcode implements ITouchEventHandler, IDisplayComponent, IKeyPadO
             case 4: value += "\n\n [*][*][*][*]" ; break ;
             default: value += "\n\n [_][_][_][_]" ; break ;
         }
-        System.err.println("Value "+ value);
+//        System.err.println("Value "+ value);
 
         return value  ;
     }
@@ -81,7 +81,7 @@ public class Passcode implements ITouchEventHandler, IDisplayComponent, IKeyPadO
     {
 
         count = c ;
-        System.err.println( "Key: " + key ) ;
+//        System.err.println( "Key: " + key ) ;
 
         // reset count if previous passcode was invalid
         if (invalid){

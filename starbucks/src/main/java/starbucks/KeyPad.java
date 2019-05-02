@@ -25,7 +25,7 @@ public class KeyPad implements ITouchEventHandler, IDisplayComponent, IKeyPadSub
     public void touch(int x, int y) { 
         if ( y > 4 )
         {
-            System.err.println( "KeyPad Touched at (" + x + ", " + y + ")" ) ; 
+//            System.err.println( "KeyPad Touched at (" + x + ", " + y + ")" ) ;
             this.lastKey = getKey( x, y ) ;
             if ( x==3 && y==8   )
             {
@@ -49,7 +49,7 @@ public class KeyPad implements ITouchEventHandler, IDisplayComponent, IKeyPadSub
      * @return Lasy Key
      */
     public String lastKey() { 
-        System.err.println( "Key Pressed: " + this.lastKey ) ;
+//        System.err.println( "Key Pressed: " + this.lastKey ) ;
         return this.lastKey ; 
     }
 

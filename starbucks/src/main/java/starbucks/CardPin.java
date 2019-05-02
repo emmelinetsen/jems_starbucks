@@ -18,7 +18,7 @@ public class CardPin implements ITouchEventHandler, IDisplayComponent, IKeyPadOb
     {
         if ( count > 4)
         {
-            System.err.println( "Card Pin Touched at (" + x + ", " + y + ")" ) ;
+//            System.err.println( "Card Pin Touched at (" + x + ", " + y + ")" ) ;
         }
         else
         {
@@ -44,7 +44,7 @@ public class CardPin implements ITouchEventHandler, IDisplayComponent, IKeyPadOb
      */
     public String display()
     {
-        System.err.println( "displayCount: " + displayCount + "cardPin at display " + cardPin) ;
+//        System.err.println( "displayCount: " + displayCount + "cardPin at display " + cardPin) ;
         return "[" + cardPin + "]";
 
     }
@@ -65,7 +65,7 @@ public class CardPin implements ITouchEventHandler, IDisplayComponent, IKeyPadOb
      */
     public void keyEventUpdate( int c, String key )
     {
-        System.err.println( "Card Number Pin: " + cardPin + " key " + key + " count: "+ count + " " + c) ;
+//        System.err.println( "Card Number Pin: " + cardPin + " key " + key + " count: "+ count + " " + c) ;
 
         cardIdCount = c ;
 

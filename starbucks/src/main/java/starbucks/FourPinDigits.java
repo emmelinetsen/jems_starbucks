@@ -28,7 +28,7 @@ public class FourPinDigits implements IPinState
      * @param digit Digit Value
      */
     public void number( String digit ) {
-        System.err.println( "Digit: " + digit ) ;
+//        System.err.println( "Digit: " + digit ) ;
         return ;
     }
 

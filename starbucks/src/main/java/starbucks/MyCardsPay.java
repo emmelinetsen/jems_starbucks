@@ -32,7 +32,7 @@ public class MyCardsPay extends Screen
      */
     @Override
     public void touch(int x, int y) {
-        System.err.println( "KeyPad MyCardsPay Touched at (" + x + ", " + y + ")" ) ;
+//        System.err.println( "KeyPad MyCardsPay Touched at (" + x + ", " + y + ")" ) ;
 
         // touch(3,3) from MyCardsPay screen switches to the MyCards screen
         if (x==3 && y==3){

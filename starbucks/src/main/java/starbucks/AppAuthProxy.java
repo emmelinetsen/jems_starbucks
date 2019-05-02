@@ -55,7 +55,7 @@ public class AppAuthProxy implements IApp, IPinAuthObserver {
      * @param y Y Coordinate
      */
     public void touch(int x, int y) {
-        System.err.println(app.screen());
+//        System.err.println(app.screen());
         if ( authenticated )
             app.touch(x, y) ;
         else
@@ -80,7 +80,7 @@ public class AppAuthProxy implements IApp, IPinAuthObserver {
             return app.screen();
         }
         else{
-            System.err.println("Screen: " + app.screen());
+//            System.err.println("Screen: " + app.screen());
             // Set current screen to PinScreen upon unauthenticated screen
          //   AppController.getInstance().setCurrentScreen(new PinScreen());
             return ps.name() ;
@@ -94,7 +94,7 @@ public class AppAuthProxy implements IApp, IPinAuthObserver {
     public String screenContents() {
         //System.err.println("PS Name: " + ps.name().toString());
        // System.err.println("PS Display: " + ps.display().toString());
-        System.err.println("Authenticated: " + authenticated);
+//        System.err.println("Authenticated: " + authenticated);
         if ( authenticated ) {
             return app.screenContents() ;
         } else {

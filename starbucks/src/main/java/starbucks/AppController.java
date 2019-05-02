@@ -127,7 +127,7 @@ public class AppController implements IApp {
      * @param card Card Number
      */
     public void setNextScreen(String screen, String card){
-        System.err.println("this.value: " + this.value);
+       // System.err.println("this.value: " + this.value);
         switch (screen){
             case "MyCards":
                 if (card.equals("pay")){ // setting next screen from card pay

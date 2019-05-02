@@ -88,7 +88,7 @@ public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinA
         this.d2 = "" ;
         this.d3 = "" ;
         this.d4 = "" ;
-        debug() ;
+//        debug() ;
     }
 
     /**
@@ -106,7 +106,7 @@ public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinA
             this.d3 = "" ;
             this.d4 = "" ;
         }
-        debug() ;
+//        debug() ;
     }
 
     /**
@@ -123,7 +123,7 @@ public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinA
             this.d3 = "" ;
             this.d4 = "" ;
         }
-        debug() ;
+//        debug() ;
     }
 
     /**
@@ -139,7 +139,7 @@ public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinA
         else {
             this.d4 = "" ;
         }
-        debug() ;
+//        debug() ;
     }
 
     /**
@@ -153,17 +153,17 @@ public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinA
         if ( digit != null )
         {
             this.d4 = digit ;
-            debug() ;
-            System.err.println( "Authenticating..." ) ;
+//            debug() ;
+       //     System.err.println( "Authenticating..." ) ;
             if ( pin.equals( d1+d2+d3+d4 ) )
             {
-                System.err.println( "Successful Login!" ) ;
+//                System.err.println( "Successful Login!" ) ;
                // this.authenticated = true ;
                 notifyObserver() ;
             }
             else
             {
-                System.err.println( "Login Failed!" ) ;
+//                System.err.println( "Login Failed!" ) ;
                 setStateNoPinDigits() ;
             }
         }
@@ -176,7 +176,7 @@ public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinA
      */
     public void keyEventUpdate( int c, String key ) 
     {
-        System.err.println( "Key: " + key + " Count: " + c ) ;
+//        System.err.println( "Key: " + key + " Count: " + c ) ;
         if ( key.equals(" ") )
         /* nothing */ ;
         else if ( key.equals("X") )

@@ -339,7 +339,7 @@ public class NewTests {
         // attempt to add card
         app.next() ;
         lines = app.screenContents().split("\n");
-        System.err.println(Arrays.toString(lines));
+//        System.err.println(Arrays.toString(lines));
         assertEquals("[]", lines[4].trim());
         assertEquals("[]", lines[5].trim());
 

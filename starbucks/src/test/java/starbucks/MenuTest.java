@@ -66,7 +66,7 @@ public class MenuTest
         app.execute("C") ;
         assertEquals("Rewards", app.screen());
         lines = app.screenContents().split("\n");
-        System.err.println("lines: " + Arrays.toString(lines));
+//        System.err.println("lines: " + Arrays.toString(lines));
         assertEquals("Make Every", lines[7].trim());  
         assertEquals("Visit Count", lines[8].trim());  
         app.display() ;

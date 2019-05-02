@@ -44,14 +44,14 @@ public class LandscapeStrategy implements IOrientationStrategy {
      */
     public String contents(IScreen s)
     {
-        System.err.println("landscapeStrategy");
+//        System.err.println("landscapeStrategy");
         String out = "" ;
         out += "================================\n" ;
         out += "  " + s.name() + "  \n" ;
         out += "================================\n" ;
         out += s.display() + "\n"  ;
         out += "================================\n" ;
-        dumpLines( out ) ;
+//        dumpLines( out ) ;
         return out ;
     }
 

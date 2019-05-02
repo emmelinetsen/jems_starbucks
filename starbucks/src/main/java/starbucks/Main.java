@@ -24,7 +24,7 @@ final class Main {
      * @param args No args expected.
      */
     public static void main(final String[] args) {
-        System.err.println( "Args: " + Arrays.toString(args) ) ;
+       // System.err.println( "Args: " + Arrays.toString(args) ) ;
         IApp app = new AppAuthProxy() ;
         Console c = System.console();
       //  Scanner scanner = new Scanner(System.in);
@@ -33,7 +33,7 @@ final class Main {
             System.out.print("\033[H\033[2J") ; // clear the screen
             System.out.flush() ;
             System.out.println(app.screenContents()) ;
-            System.err.println("Screen: " + app.screen());
+           // System.err.println("Screen: " + app.screen());
             System.out.println( msg ) ;
             System.out.print("=> ") ;
             String ch = c.readLine() ;       // get user command
@@ -48,8 +48,8 @@ final class Main {
                 parms = parms.substring(1) ;
                 parms = parms.substring(0, parms.length() - 1) ;
                 String[] values = parms.split(",") ;
-                System.err.println( "Value: " + Arrays.toString(values)) ;
-                System.err.println("Screen: " + app.screen());
+              //  System.err.println( "Value: " + Arrays.toString(values)) ;
+              //  System.err.println("Screen: " + app.screen());
                 String x = values[0] ;
                 String y = values[1] ;
                 msg = "touch: x="+x + " y="+y ; 

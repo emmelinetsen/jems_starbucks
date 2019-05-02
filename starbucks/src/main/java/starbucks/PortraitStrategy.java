@@ -58,11 +58,11 @@ public class PortraitStrategy implements IOrientationStrategy {
         StringBuffer buf = new StringBuffer();
         //  String lines = "" ;
         for ( int i = 0; i<num; i++ ) {
-            System.err.print(".") ;
+//            System.err.print(".") ;
             buf.append("\n");
             //  lines += "\n" ;
         }
-        System.err.println("") ;
+//        System.err.println("") ;
         // return lines ;
         return buf.toString();
     }
@@ -99,7 +99,7 @@ public class PortraitStrategy implements IOrientationStrategy {
      */
     public String contents(IScreen s)
     {
-        System.err.println("portraitStrategy");
+//        System.err.println("portraitStrategy");
         String out = "" ;
         out += "===============\n" ;
         int nameLen = s.name().length() ;
@@ -126,7 +126,7 @@ public class PortraitStrategy implements IOrientationStrategy {
         out += padlines ;
         out +=  "===============\n" ;
         out +=  "[A][B][C][D][E]\n" ;
-        dumpLines( out ) ;
+//        dumpLines( out ) ;
         return out ;
     }
 

@@ -90,7 +90,7 @@ public class Screen implements IScreen, IDisplayComponent
         StringBuffer buf = new StringBuffer();
         for (IDisplayComponent c : components )
         {
-            System.err.println( "Screen: " + c.getClass().getName() ) ;
+//            System.err.println( "Screen: " + c.getClass().getName() ) ;
             //value = value + c.display() + "\n" ;
             buf.append(c.display());
             buf.append("\n");

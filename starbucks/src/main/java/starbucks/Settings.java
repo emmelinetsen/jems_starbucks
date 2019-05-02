@@ -27,7 +27,7 @@ public class Settings extends Screen
      */
     @Override
     public void touch(int x, int y) {
-        System.err.println("KeyPad MyCards Touched at (" + x + ", " + y + ")");
+       // System.err.println("KeyPad MyCards Touched at (" + x + ", " + y + ")");
 
         if ( (y==1) && (x<4 && x>=1) ){
             //   AppController.getInstance().setCurrentScreen(new AddCard());
