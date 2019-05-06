@@ -11,35 +11,24 @@ import javax.persistence.Id;
 public class Cards {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-//    private final String uid;
-    private String card;
+    private String card_id;
+
+    private String username;
     private double amt;
 
 
-    public Cards(){}
-
-/*    public Cards(String uid) {
-       // this.id = id;
-        this.uid = uid;
-        this.amt -= 2.50;
-    }*/
-
-    public Cards(String card, double amt){
-//        this.card = card;
-//        this.amt = amt;
-        this.setCard(card);
-        this.setAmt(amt);
+    public Cards(){
+        card_id = "";
+        username = "";
+        amt = 0;
     }
 
-    public Cards(int id, String card, double amt ){
-//        this.id = id;
-//        this.card = card;
-//        this.amt = amt;
-        this.setId(id);
+
+
+    public Cards(String card, String username, double amt){
         this.setCard(card);
         this.setAmt(amt);
+        this.setUsername(username);
     }
 
 
@@ -48,20 +37,12 @@ public class Cards {
 //    }
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getCard() {
-        return card;
+        return card_id;
     }
 
     public void setCard(String card) {
-        this.card = card;
+        this.card_id = card;
     }
 
     public double getAmt(){
@@ -72,11 +53,20 @@ public class Cards {
         this.amt = amt;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+
     @Override
     public String toString() {
         return "{" +
-                "id:" + id +
-                ", card:'" + card + '\'' +
+                "user:" + username +
+                ", card:'" + card_id + '\'' +
                 ", amt:'" + amt + '\'' +
                 '}';
     }
