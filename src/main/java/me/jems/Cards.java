@@ -74,10 +74,10 @@ public class Cards {
 
     @Override
     public String toString() {
-        return "Blog{" +
-                "id=" + id +
-                ", card='" + card + '\'' +
-                ", amt='" + amt + '\'' +
+        return "{" +
+                "id:" + id +
+                ", card:'" + card + '\'' +
+                ", amt:'" + amt + '\'' +
                 '}';
     }
 }
