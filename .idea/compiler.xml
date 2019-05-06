@@ -7,8 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jems_starbucks" />
-        <module name="SpringRest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jems_starbucks.main" target="1.8" />
+      <module name="jems_starbucks.test" target="1.8" />
+      <module name="SpringRest" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
