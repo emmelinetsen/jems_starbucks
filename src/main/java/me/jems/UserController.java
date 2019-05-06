@@ -33,7 +33,7 @@ public class UserController extends AppController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<Users> authenticate(@RequestBody Map<String, String> body) {
-        session_id = false;
+        authenticated = false;
         if(!body.isEmpty()) {
             String username = body.get("username");
             String hashedPassword = body.get("hashedPassword");
@@ -41,7 +41,8 @@ public class UserController extends AppController {
                 ArrayList<Users> users = (ArrayList<Users>) userRepository.findByUserNameEquals(username);
                 for(Users u: users) {
                     if(u.getHashedPassword().equals(hashedPassword)) {
-                        session_id = true;
+                        authenticated = true;
+                        current_user = username;
                         return new ResponseEntity<>(u, HttpStatus.OK);
                     }
                 }

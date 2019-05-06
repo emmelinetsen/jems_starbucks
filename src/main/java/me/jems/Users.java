@@ -7,10 +7,9 @@ import javax.persistence.*;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
     @Column(name = "username")
     private String userName;
+
     @Column(name = "hashed_password")
     private String hashedPassword;
 
@@ -23,11 +22,6 @@ public class Users {
         this.hashedPassword = hashedPassword;
     }
 
-    public Users(int id, String userName, String hashedPassword ){
-        this.id = id;
-        this.userName = userName;
-        this.hashedPassword = hashedPassword;
-    }
 
     public String getUserName() {
         return userName;
@@ -47,8 +41,6 @@ public class Users {
 
     @Override
     public String toString() {
-        return "{" +
-                "id:" + id +
-                ", username:'" + userName + '}';
+        return "username:'" + userName + '}';
     }
 }

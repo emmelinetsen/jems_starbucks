@@ -1,7 +1,8 @@
 package me.jems;
 
-public class AppController {
-    protected boolean session_id = true;
+public abstract class AppController {
+    protected boolean authenticated = true;
+    protected String current_user = "";
 
 
 }
