@@ -19,15 +19,16 @@ public class UserController extends AppController {
     public Users createUser(@RequestBody Map<String, String> body){
        String username = body.get("username");
        String hashedPassword = body.get("hashedPassword");
-        return userRepository.save(new Users(username, hashedPassword));
+       return userRepository.save(new Users(username, hashedPassword));
     }
 
     @PostMapping("/authenticate")
     public Boolean authenticate(@RequestBody Map<String, String> body) {
+        session_id = false;
         if(!body.isEmpty()) {
             String username = body.get("username");
             String hashedPassword = body.get("hashedPassword");
-            ArrayList<Users> users = (ArrayList<Users>) userRepository.findByUserName(username);
+            ArrayList<Users> users = (ArrayList<Users>) userRepository.findByUserNameEquals(username);
             for(Users u: users) {
                 if(u.getHashedPassword().equals(hashedPassword)) {
                     session_id = true;

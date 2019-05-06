@@ -10,5 +10,5 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<Users, Integer> {
 
     // List<Cards> findByTitleContainingOrContentContaining(String text, String textAgain);
-    List<Users> findByUserName(String username);
+    List<Users> findByUserNameEquals(String username);
 }

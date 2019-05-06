@@ -1,10 +1,6 @@
 package me.jems;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Table
@@ -13,8 +9,14 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "username")
     private String userName;
+    @Column(name = "hashed_password")
     private String hashedPassword;
+
+    public Users() {
+
+    }
 
     public Users(String userName, String hashedPassword) {
         this.userName = userName;
@@ -41,5 +43,12 @@ public class Users {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id:" + id +
+                ", username:'" + userName + '}';
     }
 }
