@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
-public class MapController extends AppController{
+public class MapController extends SessionController {
 
 
     @Autowired

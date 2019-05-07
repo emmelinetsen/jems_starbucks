@@ -8,21 +8,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
 
 @RestController
-public class  PaymentController extends AppController{
+public class  PaymentController extends SessionController {
 
     @Autowired
     CardsRepository cardsRepository;
 
     @PostMapping("/pay")
     public ResponseEntity<Cards> pay(@RequestBody Map<String, String> body){
-        if(authenticated){
+
+        int session_id = Integer.parseInt(body.get("session_id"));
+        Sessions s = verify(session_id);
+
+        if(s != null){
             String card_id = body.get("card_id");
             try{
-                List<Cards> my_cards = cardsRepository.findAll();
+                ArrayList<Cards> my_cards = (ArrayList<Cards>) cardsRepository.findByUsernameContaining(s.getUsername());
                 Cards my_card = new Cards();
                 for(Cards c : my_cards){
                     if(c.getCard().equals(card_id)){

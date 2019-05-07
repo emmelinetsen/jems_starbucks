@@ -4,19 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
-public class UserController extends AppController {
+public class UserController extends SessionController {
 
     @Autowired
     UserRepository userRepository;
+
 
     @PostMapping("/createuser")
     public ResponseEntity<Users> createUser(@RequestBody Map<String, String> body){
@@ -32,8 +31,7 @@ public class UserController extends AppController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<Users> authenticate(@RequestBody Map<String, String> body) {
-        authenticated = false;
+    public ResponseEntity<Sessions> authenticate(@RequestBody Map<String, String> body) {
         if(!body.isEmpty()) {
             String username = body.get("username");
             String hashedPassword = body.get("hashedPassword");
@@ -41,9 +39,8 @@ public class UserController extends AppController {
                 ArrayList<Users> users = (ArrayList<Users>) userRepository.findByUserNameEquals(username);
                 for(Users u: users) {
                     if(u.getHashedPassword().equals(hashedPassword)) {
-                        authenticated = true;
-                        current_user = username;
-                        return new ResponseEntity<>(u, HttpStatus.OK);
+                        //add new session
+                        return new ResponseEntity<>(newSession(username), HttpStatus.OK);
                     }
                 }
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
@@ -51,6 +48,16 @@ public class UserController extends AppController {
 
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
+    @DeleteMapping("/logout")
+    public ResponseEntity<Sessions> logout(@RequestParam(value="session_id") String id) {
+        if(verify(Integer.parseInt(id)) != null){
+            deleteSession(Integer.parseInt(id));
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
     }
 
 }

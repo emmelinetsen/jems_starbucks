@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-public class AddCardController extends AppController{
+public class AddCardController extends SessionController {
 
 
 
@@ -19,10 +19,14 @@ public class AddCardController extends AppController{
 
     @PostMapping("/addcard")
     public ResponseEntity<Cards> addCard(@RequestBody Map<String, String> body){
-        if(authenticated){
+
+        int session_id = Integer.parseInt(body.get("session_id"));
+        Sessions s = verify(session_id);
+
+        if(s != null){
             String card_id = body.get("card_id");
             double amt = Double.parseDouble(body.get("amt"));
-            Cards card = new Cards(card_id, current_user, amt);
+            Cards card = new Cards(card_id, s.getUsername(), amt);
             //write to card db
             cardsRepository.save(card);
             //send response
@@ -36,9 +40,13 @@ public class AddCardController extends AppController{
     }
 
     @GetMapping("/getusercards")
-    public ResponseEntity<ArrayList<Cards>> getUserCards(){
-        if(authenticated){
-            ArrayList<Cards> user_cards = (ArrayList<Cards>) cardsRepository.findByUsernameContaining(current_user);
+    public ResponseEntity<ArrayList<Cards>> getUserCards(@RequestBody Map<String, String> body){
+
+        int session_id = Integer.parseInt(body.get("session_id"));
+        Sessions s = verify(session_id);
+
+        if(s != null){
+            ArrayList<Cards> user_cards = (ArrayList<Cards>) cardsRepository.findByUsernameContaining(s.getUsername());
             HttpHeaders responseHeaders = new HttpHeaders();
             return new ResponseEntity<>(user_cards, responseHeaders, HttpStatus.OK);
         }else{
