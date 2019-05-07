@@ -8,5 +8,5 @@ import java.util.List;
 public interface MapsRepository extends JpaRepository<Maps, Integer> {
 
     // List<Cards> findByTitleContainingOrContentContaining(String text, String textAgain);
-    List<Maps> findBycity(String city);
+    List<Maps> findStoreByCity(String city);
 }

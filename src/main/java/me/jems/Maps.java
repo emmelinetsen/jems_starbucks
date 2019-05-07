@@ -13,6 +13,7 @@ public class Maps {
 
     public Maps() {
 
+
     }
 
     public Maps(String store_address, String city) {

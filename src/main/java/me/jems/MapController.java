@@ -34,14 +34,11 @@ public class MapController extends AppController{
 
     @GetMapping("/getstorelocation")
     public ResponseEntity<ArrayList<Maps>> getStoreLocation(){
-        if(authenticated){
-            ArrayList<Maps> store_address = (ArrayList<Maps>) mapsRepository.findBycity(city);
-            HttpHeaders responseHeaders = new HttpHeaders();
-            return new ResponseEntity<>(store_address, responseHeaders, HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        ArrayList<Maps> store_address = (ArrayList<Maps>) mapsRepository.findStoreByCity(city);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        return new ResponseEntity<>(store_address, responseHeaders, HttpStatus.OK);
+
         }
-    }
 
 }
 
