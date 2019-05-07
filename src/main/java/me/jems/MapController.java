@@ -33,7 +33,7 @@ public class MapController extends AppController{
     }
 
     @GetMapping("/getstorelocation")
-    public ResponseEntity<ArrayList<Maps>> getStoreLocation(){
+    public ResponseEntity <ArrayList<Maps>> getLocation(@RequestParam(value="city") String city){
         ArrayList<Maps> store_address = (ArrayList<Maps>) mapsRepository.findStoreByCity(city);
         HttpHeaders responseHeaders = new HttpHeaders();
         return new ResponseEntity<>(store_address, responseHeaders, HttpStatus.OK);

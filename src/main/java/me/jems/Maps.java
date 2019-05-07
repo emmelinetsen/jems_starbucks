@@ -17,6 +17,9 @@ public class Maps {
     }
 
     public Maps(String store_address, String city) {
+
+        this.store_address = store_address;
+        this.city = city;
         this.setCity(city);
         this.setStoreLocation(store_address);
     }
