@@ -18,7 +18,7 @@ public class MapsController {
     }*/
 
     @RequestMapping("/maps")
-    public Maps pay(@RequestParam(value="uid") String uid) {
+    public Maps map(@RequestParam(value="uid") String uid) {
         return new Maps(String.format(uid));
     }
 }
