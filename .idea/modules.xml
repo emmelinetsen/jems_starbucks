@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jems_starbucks.iml" filepath="$PROJECT_DIR$/jems_starbucks.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jems_starbucks.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jems_starbucks.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jems_starbucks.test.iml" filepath="$PROJECT_DIR$/.idea/modules/jems_starbucks.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jems_starbucks.iml" filepath="$PROJECT_DIR$/.idea/jems_starbucks.iml" />
     </modules>
   </component>
 </project>
